@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="lang-vi"
+  data-title-vi="Điều khoản sử dụng — BabyPaint"
+  data-title-en="Terms of Use — BabyPaint"
+  data-desc-vi="Điều khoản sử dụng của BabyPaint."
+  data-desc-en="BabyPaint Terms of Use.">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,67 +11,89 @@
   <meta name="description" content="BabyPaint Terms of Use / Điều khoản sử dụng." />
   <link rel="icon" href="assets/icon.png" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* Set language ASAP to avoid a flash of the wrong language. */
+    (function () {
+      try {
+        var s = localStorage.getItem('bp-lang');
+        var l = (s === 'vi' || s === 'en') ? s
+          : ((navigator.language || 'vi').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+        var d = document.documentElement;
+        d.classList.remove('lang-vi', 'lang-en');
+        d.classList.add('lang-' + l);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <nav class="nav">
     <a class="brand" href="/"><img src="assets/icon.png" alt="BabyPaint" /> BabyPaint</a>
-    <span class="links"><a href="/">Trang chủ</a> <a href="/privacy">Privacy</a></span>
+    <span class="links">
+      <a href="/"><span class="t-vi">Trang chủ</span><span class="t-en">Home</span></a>
+      <a href="/privacy"><span class="t-vi">Quyền riêng tư</span><span class="t-en">Privacy</span></a>
+      <span class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set-lang="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </span>
+    </span>
   </nav>
 
   <main class="wrap">
     <article class="doc">
-      <span class="lang-pill">Tiếng Việt</span>
-      <h1>Điều khoản sử dụng</h1>
-      <p class="updated">Cập nhật lần cuối: 06/06/2026</p>
-      <p>Bằng việc tải và sử dụng BabyPaint ("ứng dụng"), bạn đồng ý với các điều khoản dưới đây.</p>
+      <div class="t-vi">
+        <h1>Điều khoản sử dụng</h1>
+        <p class="updated">Cập nhật lần cuối: 06/06/2026</p>
+        <p>Bằng việc tải và sử dụng BabyPaint ("ứng dụng"), bạn đồng ý với các điều khoản dưới đây.</p>
 
-      <h2>1. Giấy phép sử dụng</h2>
-      <p>Chúng tôi cấp cho bạn quyền sử dụng ứng dụng cho mục đích cá nhân, phi thương mại, dành cho gia đình. Việc sử dụng cũng tuân theo Thoả thuận Cấp phép Người dùng Cuối (EULA) tiêu chuẩn của Apple:
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
+        <h2>1. Giấy phép sử dụng</h2>
+        <p>Chúng tôi cấp cho bạn quyền sử dụng ứng dụng cho mục đích cá nhân, phi thương mại, dành cho gia đình. Việc sử dụng cũng tuân theo Thoả thuận Cấp phép Người dùng Cuối (EULA) tiêu chuẩn của Apple:
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
 
-      <h2>2. Mua hàng trong ứng dụng</h2>
-      <p>Gói "tranh cao cấp" là khoản mua một lần, được Apple xử lý qua App Store. Việc hoàn tiền tuân theo chính sách của Apple. Mua hàng được đặt sau cổng phụ huynh.</p>
+        <h2>2. Mua hàng trong ứng dụng</h2>
+        <p>Gói "tranh cao cấp" là khoản mua một lần, được Apple xử lý qua App Store. Việc hoàn tiền tuân theo chính sách của Apple. Mua hàng được đặt sau cổng phụ huynh.</p>
 
-      <h2>3. Nội dung của bạn</h2>
-      <p>Tranh do bé tô và lưu trên máy thuộc về bạn. Ứng dụng không tải lên hay truy cập các nội dung đó.</p>
+        <h2>3. Nội dung của bạn</h2>
+        <p>Tranh do bé tô và lưu trên máy thuộc về bạn. Ứng dụng không tải lên hay truy cập các nội dung đó.</p>
 
-      <h2>4. Không bảo đảm</h2>
-      <p>Ứng dụng được cung cấp "nguyên trạng", không kèm bảo đảm dưới bất kỳ hình thức nào trong phạm vi pháp luật cho phép.</p>
+        <h2>4. Không bảo đảm</h2>
+        <p>Ứng dụng được cung cấp "nguyên trạng", không kèm bảo đảm dưới bất kỳ hình thức nào trong phạm vi pháp luật cho phép.</p>
 
-      <h2>5. Thay đổi</h2>
-      <p>Chúng tôi có thể cập nhật điều khoản này; phiên bản mới sẽ được đăng tại trang này.</p>
+        <h2>5. Thay đổi</h2>
+        <p>Chúng tôi có thể cập nhật điều khoản này; phiên bản mới sẽ được đăng tại trang này.</p>
 
-      <h2>6. Liên hệ</h2>
-      <p><a href="mailto:babypaint.support@gmail.com">babypaint.support@gmail.com</a></p>
+        <h2>6. Liên hệ</h2>
+        <p><a href="mailto:babypaint.support@gmail.com">babypaint.support@gmail.com</a></p>
+      </div>
 
-      <hr class="divider" />
+      <div class="t-en">
+        <h1>Terms of Use</h1>
+        <p class="updated">Last updated: 2026-06-06</p>
+        <p>By downloading and using BabyPaint (the "app"), you agree to the terms below.</p>
 
-      <span class="lang-pill">English</span>
-      <h1>Terms of Use</h1>
-      <p class="updated">Last updated: 2026-06-06</p>
-      <p>By downloading and using BabyPaint (the "app"), you agree to the terms below.</p>
+        <h2>1. License</h2>
+        <p>We grant you a personal, non-commercial, family-use license to the app. Use is also governed by Apple's Standard End User License Agreement (EULA):
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
 
-      <h2>1. License</h2>
-      <p>We grant you a personal, non-commercial, family-use license to the app. Use is also governed by Apple's Standard End User License Agreement (EULA):
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">apple.com/legal/internet-services/itunes/dev/stdeula</a>.</p>
+        <h2>2. In-app purchases</h2>
+        <p>The "premium pictures" pack is a one-time purchase processed by Apple via the App Store. Refunds follow Apple's policy. Purchases are placed behind a parental gate.</p>
 
-      <h2>2. In-app purchases</h2>
-      <p>The "premium pictures" pack is a one-time purchase processed by Apple via the App Store. Refunds follow Apple's policy. Purchases are placed behind a parental gate.</p>
+        <h2>3. Your content</h2>
+        <p>Artwork created and stored on your device belongs to you. The app does not upload or access it.</p>
 
-      <h2>3. Your content</h2>
-      <p>Artwork created and stored on your device belongs to you. The app does not upload or access it.</p>
+        <h2>4. No warranty</h2>
+        <p>The app is provided "as is", without warranties of any kind to the extent permitted by law.</p>
 
-      <h2>4. No warranty</h2>
-      <p>The app is provided "as is", without warranties of any kind to the extent permitted by law.</p>
+        <h2>5. Changes</h2>
+        <p>We may update these terms; the latest version will be posted on this page.</p>
 
-      <h2>5. Changes</h2>
-      <p>We may update these terms; the latest version will be posted on this page.</p>
+        <h2>6. Contact</h2>
+        <p><a href="mailto:babypaint.support@gmail.com">babypaint.support@gmail.com</a></p>
+      </div>
 
-      <h2>6. Contact</h2>
-      <p><a href="mailto:babypaint.support@gmail.com">babypaint.support@gmail.com</a></p>
-
-      <a class="back" href="/">← Trang chủ / Home</a>
+      <a class="back" href="/"><span class="t-vi">← Trang chủ</span><span class="t-en">← Home</span></a>
     </article>
   </main>
+
+  <script src="lang.js" defer></script>
 </body>
 </html>
