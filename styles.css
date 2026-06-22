@@ -90,3 +90,22 @@ a:hover { text-decoration: underline; }
 }
 .divider { border: none; border-top: 2px dashed #e3c9c9; margin: 34px 0; }
 .back { display:inline-block; margin-top: 8px; font-weight: 600; }
+
+/* Language switching — show only the active language.
+   No JS → root keeps class "lang-vi" by default, so Vietnamese shows. */
+html.lang-en .t-vi { display: none !important; }
+html.lang-vi .t-en { display: none !important; }
+
+.lang-switch {
+  display: inline-flex; vertical-align: middle; margin-left: 18px;
+  border: 1.5px solid var(--coral); border-radius: 999px; overflow: hidden;
+}
+.lang-switch button {
+  appearance: none; border: none; background: transparent; cursor: pointer;
+  font-family: inherit; font-weight: 700; font-size: 13px; line-height: 1.4;
+  padding: 5px 12px; color: var(--coral-dark);
+}
+.lang-switch button + button { border-left: 1.5px solid var(--coral); }
+.lang-switch button[aria-pressed="true"] { background: var(--coral); color: #fff; }
+.lang-switch button:hover { background: rgba(255,107,107,.14); }
+.lang-switch button[aria-pressed="true"]:hover { background: var(--coral); }

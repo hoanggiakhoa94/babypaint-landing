@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="lang-vi"
+  data-title-vi="BabyPaint — Ứng dụng tô màu cho bé"
+  data-title-en="BabyPaint — A coloring app for kids"
+  data-desc-vi="BabyPaint — ứng dụng tô màu cho trẻ em. Tô theo vùng, vẽ tự do, không quảng cáo, không theo dõi."
+  data-desc-en="BabyPaint — a coloring app for kids: fill by region, free-draw, no ads, no tracking.">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,14 +11,31 @@
   <meta name="description" content="BabyPaint — ứng dụng tô màu cho trẻ em. Tô theo vùng, vẽ tự do, không quảng cáo, không theo dõi. A coloring app for kids: no ads, no tracking." />
   <link rel="icon" href="assets/icon.png" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    /* Set language ASAP to avoid a flash of the wrong language. */
+    (function () {
+      try {
+        var s = localStorage.getItem('bp-lang');
+        var l = (s === 'vi' || s === 'en') ? s
+          : ((navigator.language || 'vi').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+        var d = document.documentElement;
+        d.classList.remove('lang-vi', 'lang-en');
+        d.classList.add('lang-' + l);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <nav class="nav">
     <span class="brand"><img src="assets/icon.png" alt="BabyPaint" /> BabyPaint</span>
     <span class="links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="#support">Hỗ trợ</a>
+      <a href="/privacy"><span class="t-vi">Quyền riêng tư</span><span class="t-en">Privacy</span></a>
+      <a href="/terms"><span class="t-vi">Điều khoản</span><span class="t-en">Terms</span></a>
+      <a href="#support"><span class="t-vi">Hỗ trợ</span><span class="t-en">Support</span></a>
+      <span class="lang-switch" role="group" aria-label="Ngôn ngữ / Language">
+        <button type="button" data-set-lang="vi" aria-pressed="true">VI</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </span>
     </span>
   </nav>
 
@@ -22,69 +43,89 @@
     <img class="icon" src="assets/icon.png" alt="BabyPaint icon" />
     <h1>BabyPaint 🎨</h1>
     <p class="tagline">
-      Bé tô màu thỏa thích — không quảng cáo, không theo dõi.
-      <span class="en">A joyful coloring app for kids — no ads, no tracking.</span>
+      <span class="t-vi">Bé tô màu thỏa thích — không quảng cáo, không theo dõi.</span>
+      <span class="t-en">A joyful coloring app for kids — no ads, no tracking.</span>
     </p>
-    <div class="badge">Sắp có trên App Store<span class="sub">Coming soon to the App Store</span></div>
+    <div class="badge">
+      <span class="t-vi">Sắp có trên App Store</span>
+      <span class="t-en">Coming soon to the App Store</span>
+    </div>
   </header>
 
   <main class="wrap">
     <section class="gallery">
-      <img src="assets/fish.png" alt="Chú cá" />
-      <img src="assets/house.png" alt="Ngôi nhà" />
-      <img src="assets/dino1.jpg" alt="Khủng long" />
-      <img src="assets/star.png" alt="Ngôi sao" />
-      <img src="assets/flower.png" alt="Bông hoa" />
+      <img src="assets/fish.png" alt="Chú cá / Fish" />
+      <img src="assets/house.png" alt="Ngôi nhà / House" />
+      <img src="assets/dino1.jpg" alt="Khủng long / Dinosaur" />
+      <img src="assets/star.png" alt="Ngôi sao / Star" />
+      <img src="assets/flower.png" alt="Bông hoa / Flower" />
     </section>
 
-    <h2 class="section-title">Tính năng · Features</h2>
+    <h2 class="section-title">
+      <span class="t-vi">Tính năng</span>
+      <span class="t-en">Features</span>
+    </h2>
     <section class="features">
       <div class="card">
         <div class="emoji">🪣</div>
-        <h3>Tô theo vùng</h3>
-        <p>Chạm vào một vùng để đổ màu, không lem ra ngoài nét.
-          <span class="en">Tap a region to flood-fill it within the lines.</span></p>
+        <h3><span class="t-vi">Tô theo vùng</span><span class="t-en">Fill by region</span></h3>
+        <p>
+          <span class="t-vi">Chạm vào một vùng để đổ màu, không lem ra ngoài nét.</span>
+          <span class="t-en">Tap a region to flood-fill it within the lines.</span>
+        </p>
       </div>
       <div class="card">
         <div class="emoji">🖍️</div>
-        <h3>Vẽ tự do</h3>
-        <p>Bút nhiều cỡ và bảng màu sáp tươi sáng.
-          <span class="en">Free-draw brush with bright crayon colors.</span></p>
+        <h3><span class="t-vi">Vẽ tự do</span><span class="t-en">Free draw</span></h3>
+        <p>
+          <span class="t-vi">Bút nhiều cỡ và bảng màu sáp tươi sáng.</span>
+          <span class="t-en">Free-draw brush with bright crayon colors.</span>
+        </p>
       </div>
       <div class="card">
         <div class="emoji">💎</div>
-        <h3>Tranh cao cấp</h3>
-        <p>Mở khoá thêm nhiều tranh đẹp (mua một lần).
-          <span class="en">Unlock extra premium pictures (one-time purchase).</span></p>
+        <h3><span class="t-vi">Tranh cao cấp</span><span class="t-en">Premium pictures</span></h3>
+        <p>
+          <span class="t-vi">Mở khoá thêm nhiều tranh đẹp (mua một lần).</span>
+          <span class="t-en">Unlock extra premium pictures (one-time purchase).</span>
+        </p>
       </div>
       <div class="card">
         <div class="emoji">🔒</div>
-        <h3>Cổng phụ huynh</h3>
-        <p>Mua hàng và liên kết ra ngoài đều sau cổng phụ huynh.
-          <span class="en">Purchases &amp; external links sit behind a parental gate.</span></p>
+        <h3><span class="t-vi">Cổng phụ huynh</span><span class="t-en">Parental gate</span></h3>
+        <p>
+          <span class="t-vi">Mua hàng và liên kết ra ngoài đều sau cổng phụ huynh.</span>
+          <span class="t-en">Purchases &amp; external links sit behind a parental gate.</span>
+        </p>
       </div>
       <div class="card">
         <div class="emoji">💾</div>
-        <h3>Lưu &amp; chia sẻ</h3>
-        <p>Tự lưu bài đang tô; xuất ảnh để khoe ông bà.
-          <span class="en">Auto-saves progress; export the artwork to share.</span></p>
+        <h3><span class="t-vi">Lưu &amp; chia sẻ</span><span class="t-en">Save &amp; share</span></h3>
+        <p>
+          <span class="t-vi">Tự lưu bài đang tô; xuất ảnh để khoe ông bà.</span>
+          <span class="t-en">Auto-saves progress; export the artwork to share.</span>
+        </p>
       </div>
       <div class="card">
         <div class="emoji">🛡️</div>
-        <h3>An toàn cho bé</h3>
-        <p>Không quảng cáo, không tài khoản, không thu thập dữ liệu cá nhân của bé.
-          <span class="en">No ads, no account, no collection of children's personal data.</span></p>
+        <h3><span class="t-vi">An toàn cho bé</span><span class="t-en">Safe for kids</span></h3>
+        <p>
+          <span class="t-vi">Không quảng cáo, không tài khoản, không thu thập dữ liệu cá nhân của bé.</span>
+          <span class="t-en">No ads, no account, no collection of children's personal data.</span>
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer" id="support">
     <div class="links">
-      <a href="/privacy">Chính sách quyền riêng tư</a> ·
-      <a href="/terms">Điều khoản sử dụng</a> ·
+      <a href="/privacy"><span class="t-vi">Chính sách quyền riêng tư</span><span class="t-en">Privacy Policy</span></a> ·
+      <a href="/terms"><span class="t-vi">Điều khoản sử dụng</span><span class="t-en">Terms of Use</span></a> ·
       <a href="mailto:babypaint.support@gmail.com">babypaint.support@gmail.com</a>
     </div>
     <p class="small">© 2026 BabyPaint. Made with ❤️ for little artists.</p>
   </footer>
+
+  <script src="lang.js" defer></script>
 </body>
 </html>
